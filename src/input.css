@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    font-family: 'inter', sans-serif;
+}
+
+
+.navbar-fixed {
+    @apply fixed z-[9999] top-0 left-0 w-full bg-white opacity-70 transition duration-1000;
+    backdrop-filter: blur(5px);
+    box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0, 1)
+
+}
+
+@layer components {
+.humberger-line {
+    @apply w-[30px] h-[2px] my-2 block bg-dark
+    }
+}
+
+.humberger-active > span:nth-child(1){
+    @apply  rotate-45;
+}
+
+.humberger-active > span:nth-child(2) {
+    @apply scale-0;
+}
+
+.humberger-active > span:nth-child(3) {
+    @apply -rotate-45;
+}
