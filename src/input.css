@@ -3,23 +3,146 @@
 @tailwind utilities;
 
 
+
+
 body {
-    font-family: 'inter', sans-serif;
+    font-family: 'poppins', sans-serif;
+    background-color: #211922;;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    box-shadow: -26px 27px 45px -25px rgba(0, 225, 255, 0.75) inset;
+    -webkit-box-shadow: -26px 27px 45px -25px rgba(0, 255, 255, 0.75) inset;
+    -moz-box-shadow: -26px 27px 45px -25px rgba(0, 238, 255, 0.75) inset;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-200%) translateY(-200%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(200%) translateY(200%) rotate(45deg);
+    }
+}
+
+.contact-button {
+    
+    width: 10rem;
+    height: 28px;
+    border-radius: 0 50% 0 50%;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    transform: translateY(-200%);
+    transition: border-radius 1s ease-in-out, height 1s ease-in-out, width 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.contact-button:active {
+    transform: scale(0.8); /* Efek tombol tertekan */
+}
+
+.contact-button.active {
+    width: 10rem;
+    height: 2rem;
+    border-radius: 10px;
+}
+
+#social-media-wa {
+    @apply translate-y-96 transition-transform duration-1000;
+}
+#social-media-instagram {
+    @apply translate-y-96 transition-transform duration-1000;
+}
+
+#social-media-instagram.active  {
+    @apply translate-y-0 transition-transform duration-1000;
+}
+
+#social-media-wa.active {
+    @apply translate-y-0 transition-transform duration-1000;
+}
+
+#contact-link {
+    @apply translate-y-0 absolute transition-transform duration-1000;
+}
+
+#contact-link.anu {
+    transform: translateY(-200%);
+    transition: transform 1s ease-in-out;
+}
+
+.contact-button-transform {
+    transform: translateY(0%);
+}
+
+.contact-button::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: 100px;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: rotate(45deg);
+    animation: shine 3s infinite linear;
 }
 
 
+img {
+    background-image: none;
+}
+
+
+.title {
+ @apply -translate-x-full
+}
+
+.statement {
+    @apply -translate-x-full
+}
+
+.profil-component {
+    @apply translate-x-[450px]
+}
+
+.profil-image {
+    @apply translate-x-[450px]
+}
+
+.tranform-profil{
+    @apply translate-x-0 transition-transform duration-500
+}
+
+.transform-left {
+    @apply -translate-x-80 transition-transform duration-500
+}
+
+.transform-right-title {
+    @apply  translate-x-0 transition-transform duration-1000
+}
+
+
+.shadow-left-right {
+    box-shadow: inset -20px 0px 20px -10px rgba(0, 0, 0, 0.5), inset 20px 0px 20px -10px rgba(0, 0, 0, 0.5);
+  }
+
 .navbar-fixed {
-    @apply fixed z-[9999] top-0 left-0 w-full bg-white opacity-70 transition duration-1000;
+    @apply fixed z-[9999] top-0 left-0 w-full bg-bgGradientpurple opacity-70 transition duration-1000;
     backdrop-filter: blur(5px);
     box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0, 1)
-
+    
 }
 
 @layer components {
+
 .humberger-line {
     @apply w-[30px] h-[2px] my-2 block bg-dark
     }
 }
+/* 
+#toggle {
+    @apply 
+} */
 
 .humberger-active > span:nth-child(1){
     @apply  rotate-45;
