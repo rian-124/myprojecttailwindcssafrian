@@ -4,16 +4,19 @@
 
 
 
-
+html {
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
 body {
     font-family: 'poppins', sans-serif;
-    background-color: #211922;;
+    background-color: #191a2e;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-    box-shadow: -26px 27px 45px -25px rgba(0, 225, 255, 0.75) inset;
-    -webkit-box-shadow: -26px 27px 45px -25px rgba(0, 255, 255, 0.75) inset;
-    -moz-box-shadow: -26px 27px 45px -25px rgba(0, 238, 255, 0.75) inset;
+    box-shadow: -26px 27px 45px -25px rgb(117, 91, 201, 0.75) inset;
+    -webkit-box-shadow: -26px 27px 45px -25px rgb(117, 91, 201, 0.75) inset;
+    -moz-box-shadow: -26px 27px 45px -25px rgb(117, 91, 201, 0.75) inset;
 }
 
 @keyframes shine {

@@ -24,6 +24,14 @@
 
 //animation
 
+// document.addEventListener('wheel', (e) => {
+//     e.preventDefault();
+//     window.scrollBy({
+//         top: e.deltaY * 6,
+//         behavior: 'smooth',
+//     });
+// }, { passive: false } );
+
 function delay (ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
 }
