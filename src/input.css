@@ -28,8 +28,8 @@ body {
     }
 }
 
+
 .contact-button {
-    
     width: 10rem;
     height: 28px;
     border-radius: 0 50% 0 50%;
@@ -40,14 +40,54 @@ body {
     transition: border-radius 1s ease-in-out, height 1s ease-in-out, width 1s ease-in-out, transform 1s ease-in-out;
 }
 
+/* .slider {
+    @apply absolute top-14 max-w-sm  transition-all duration-500 ease-in-out;
+    transform: translateX(0);
+} */
+/* .slider.active {
+    transform: translateX(-10%);  
+} */
+
+.gridColumn {
+    @apply grid grid-cols-subgrid
+}
+
 .contact-button:active {
-    transform: scale(0.8); /* Efek tombol tertekan */
+    transform: scale(0.8); 
 }
 
 .contact-button.active {
     width: 10rem;
     height: 2rem;
     border-radius: 10px;
+}
+
+.gallery-item {
+   @apply h-[200px]  z-0 opacity-0 absolute transition-all duration-300 ease-in-out w-[330px];
+}
+
+.gallery-item-1 {
+    @apply left-[15%] opacity-40 translate-x-[-50%]
+}
+
+.gallery-item-2, .gallery-item-4 {
+    @apply w-[380px] opacity-80 h-[250px] z-[1]
+}
+
+.gallery-item-2 {
+    @apply left-[30%] translate-x-[-50%];
+}
+
+.gallery-item-3 {
+    @apply h-[300px]  left-[50%] opacity-90 translate-x-[-50%] w-[430px] z-[2]
+}
+
+.gallery-item-4 {
+    @apply left-[70%] translate-x-[-50%]
+}
+
+.gallery-item-5 {
+    @apply left-[85%] translate-x-[-50%] opacity-40
 }
 
 #social-media-wa {
@@ -91,13 +131,11 @@ body {
 }
 
 
-img {
-    background-image: none;
-}
+
 
 
 .title {
- @apply -translate-x-full
+    @apply -translate-x-full
 }
 
 .statement {
