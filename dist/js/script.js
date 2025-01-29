@@ -1,70 +1,62 @@
-// navbar-fixed
+function introduceLoadUi() {
+  const elements = {
+    title: document.querySelector(".title"),
+    statement: document.querySelector(".statement"),
+    profil_image: document.querySelector(".profil-image"),
+    profil_component: document.querySelector(".profil-component"),
+    component: document.getElementById("introduce"),
+    button: document.getElementById("showAboutMe"),
+    backButton: document.getElementById("backButton"),
+  };
 
-// window.onscroll = function ( ) {
-//     const header = document.querySelector('header');
-//     const fixedNav = header.offsetTop;
+  const screenWidth = window.innerWidth;
 
-//     if (window.scrollY > fixedNav) {
-//         header.classList.add('navbar-fixed');
-//     } else {
-//         header.classList.remove('navbar-fixed');
-//     }
-// };
+  function delay(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
 
-// // hamburger
+  function toggleTransform(element, transformValue ) {
+    if (element.style.transform === transformValue) {
+      element.style.transform = "";
+    } else {
+      element.style.transform = transformValue;
+    }
+  }
 
-// const humberger = document.getElementById('humberger');
-// const navMenu = document.getElementById('nav-menu');
+  function toggleClass(element, className) {
+    element.classList.toggle(className);
+  }
 
-// humberger.addEventListener('click', function() {
-//     humberger.classList.toggle('humberger-active');
-//     navMenu.classList.toggle('hidden');
-// });
+   function animateElements() {
+    toggleClass(elements.title, "transform-right-title");
+  
 
-//animation
+    toggleClass(elements.statement, "transform-right-title");
+  
 
-// document.addEventListener('wheel', (e) => {
-//     e.preventDefault();
-//     window.scrollBy({
-//         top: e.deltaY * 6,
-//         behavior: 'smooth',
-//     });
-// }, { passive: false } );
+    toggleClass(elements.profil_component, "transform-left");
+    
 
-function delay(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+    toggleClass(elements.profil_image, "tranform-profil");
+    
+  }
+
+  elements.button.addEventListener("click", async () => {
+    
+    animateElements();
+    toggleTransform(elements.component, "translateX(100%)");
+    toggleTransform(elements.backButton, screenWidth <= 768 ? "translateX(-300%) translateY(200%)" : "translateX(-200%)");
+  });
+
+  window.addEventListener("load", () => {
+    elements.component.classList.toggle("active");
+  });
 }
 
 function loadUI() {
   window.onload = async () => {
-    const title = document.querySelector(".title");
-    const statement = document.querySelector(".statement");
-    const profil_image = document.querySelector(".profil-image");
-    const profil_component = document.querySelector(".profil-component");
     const button_contact = document.querySelector(".contact-button");
 
-    const transfomTitle = !title.classList.contains("transform-right-title")
-      ? title.classList.add("transform-right-title")
-      : title.classList.remove("transform-right-title");
-    await delay(1000);
-    const transformStatement = !statement.classList.contains(
-      "transform-right-title"
-    )
-      ? statement.classList.add("transform-right-title")
-      : statement.classList.remove("transform-right-title");
-    await delay(500);
-    const transformProfil_component = !profil_component.classList.contains(
-      "transform-left"
-    )
-      ? profil_component.classList.add("transform-left")
-      : profil_component.classList.remove("transform-left");
-    await delay(500);
-    const transformProfil_image = !profil_image.classList.contains(
-      "tranform-profil"
-    )
-      ? profil_image.classList.add("tranform-profil")
-      : profil_image.classList.remove("tranform-profil");
-    await delay(500);
     const tranformButton_contact = !button_contact.classList.contains(
       "contact-button-transform"
     )
@@ -122,7 +114,7 @@ function sliderImage() {
   });
 }
 
-sliderImage(); // Memanggil fungsi untuk menjalankan slider
-
-contactButtonOnClick();
 loadUI();
+sliderImage();
+introduceLoadUi();
+contactButtonOnClick();

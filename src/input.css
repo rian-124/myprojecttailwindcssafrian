@@ -11,12 +11,28 @@ html {
 body {
     font-family: 'poppins', sans-serif;
     background-color: #191a2e;
+    position: relative;
+    background-size: 100%;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
     box-shadow: -26px 27px 45px -25px rgb(117, 91, 201, 0.75) inset;
     -webkit-box-shadow: -26px 27px 45px -25px rgb(117, 91, 201, 0.75) inset;
     -moz-box-shadow: -26px 27px 45px -25px rgb(117, 91, 201, 0.75) inset;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/dist/img/background.png'); 
+    background-size: 100%;
+    filter: grayscale(100%);
+    z-index: -1;
+    opacity: 0.1;
 }
 
 @keyframes shine {
@@ -28,8 +44,15 @@ body {
     }
 }
 
+#profil img {
+  @apply lg:w-[400px]
+}
+
+
+
 
 .contact-button {
+    @apply border-2 border-white;
     width: 10rem;
     height: 28px;
     border-radius: 0 50% 0 50%;
@@ -130,9 +153,13 @@ body {
     animation: shine 3s infinite linear;
 }
 
+#introduce {
+    @apply scale-50 transition-transform duration-1000
+}
 
-
-
+#introduce.active {
+    @apply scale-100
+}
 
 .title {
     @apply -translate-x-full
@@ -151,15 +178,15 @@ body {
 }
 
 .tranform-profil{
-    @apply translate-x-0 transition-transform duration-500
+    @apply translate-x-0 transition-transform duration-500 ease-in-out
 }
 
 .transform-left {
-    @apply -translate-x-80 transition-transform duration-500
+    @apply -translate-x-80 transition-transform duration-500 ease-in-out
 }
 
 .transform-right-title {
-    @apply  translate-x-0 transition-transform duration-1000
+    @apply  translate-x-0 transition-transform duration-1000 ease-in-out
 }
 
 
@@ -167,12 +194,12 @@ body {
     box-shadow: inset -20px 0px 20px -10px rgba(0, 0, 0, 0.5), inset 20px 0px 20px -10px rgba(0, 0, 0, 0.5);
   }
 
-.navbar-fixed {
+/* .navbar-fixed {
     @apply fixed z-[9999] top-0 left-0 w-full bg-bgGradientpurple opacity-70 transition duration-1000;
     backdrop-filter: blur(5px);
     box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0, 1)
     
-}
+} */
 
 @layer components {
 
