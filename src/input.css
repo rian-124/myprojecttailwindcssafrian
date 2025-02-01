@@ -49,7 +49,13 @@ body::before {
 }
 
 
+.content {
+    @apply scale-50 transition-all duration-500 
+}
 
+.content.active {
+    @apply scale-100
+}
 
 .contact-button {
     @apply border-2 border-white;
@@ -72,7 +78,7 @@ body::before {
 } */
 
 .gridColumn {
-    @apply grid grid-cols-subgrid
+    @apply grid grid-cols-subgrid 
 }
 
 .contact-button:active {
@@ -85,8 +91,9 @@ body::before {
     border-radius: 10px;
 }
 
+
 .gallery-item {
-   @apply h-[200px]  z-0 opacity-0 absolute transition-all duration-300 ease-in-out w-[330px];
+   @apply h-[200px]  z-0 opacity-0 absolute transition-all duration-300 ease-in-out  w-[330px];
 }
 
 .gallery-item-1 {

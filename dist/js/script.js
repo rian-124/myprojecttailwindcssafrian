@@ -45,7 +45,7 @@ function introduceLoadUi() {
     
     animateElements();
     toggleTransform(elements.component, "translateX(100%)");
-    toggleTransform(elements.backButton, screenWidth <= 768 ? "translateX(-300%) translateY(200%)" : "translateX(-200%)");
+    toggleTransform(elements.backButton, screenWidth <= 768 ? "translateX(-600px) translateY(80px)" : "translateX(-2000px)");
   });
 
   window.addEventListener("load", () => {
@@ -79,6 +79,24 @@ function contactButtonOnClick() {
   });
 }
 
+function scrollProject() {
+  const container = document.getElementById('project-container');
+  
+  const contents = Array.from(container.querySelectorAll('.content'));
+  window.addEventListener('scroll', () => {
+    contents.forEach((content) => {
+      let screen = window.innerHeight;
+      let position = content.getBoundingClientRect().top;
+      
+      if (position < screen - 100 ) {
+        content.classList.add('active');
+      } else {
+        content.classList.remove('active');
+      }
+    });
+  });
+}
+
 function sliderImage() {
   const container = document.getElementById("gallery-container");
   const itemsContainer = Array.from(
@@ -101,6 +119,21 @@ function sliderImage() {
     });
   };
 
+  
+  window.addEventListener('scroll', () => {
+    itemsContainer.forEach((item, i) => {
+      let screen = window.innerHeight;
+      let position = item.getBoundingClientRect().top;
+
+      item.classList.remove(`gallery-item-${i + 1}`);
+
+      if (position < screen - 300) {
+        item.classList.add(`gallery-item-${i + 1}`);
+      }
+    });
+  });
+  
+
   nextButton.addEventListener("click", () => {
     const firstItem = itemsContainer.shift();
     itemsContainer.push(firstItem);
@@ -112,8 +145,14 @@ function sliderImage() {
     itemsContainer.unshift(lastItem);
     updateGallery();
   });
+
+
+
 }
 
+
+
+scrollProject();
 loadUI();
 sliderImage();
 introduceLoadUi();
