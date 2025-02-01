@@ -28,7 +28,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/dist/img/background.png'); 
+    background-image: url(../dist/img/background.png); 
     background-size: 100%;
     filter: grayscale(100%);
     z-index: -1;
@@ -47,6 +47,21 @@ body::before {
 #profil img {
   @apply lg:w-[400px]
 }
+
+
+
+
+.link:hover::after {
+    content: '';
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    padding: 10px;
+    
+    border: 1px solid white;
+    background: url(../dist/img/clients1.png) no-repeat center center;
+}
+
 
 
 .content {
