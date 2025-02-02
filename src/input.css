@@ -49,18 +49,44 @@ body::before {
 }
 
 
+.details img {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+}
+
+.details img:not(.hidden) {
+    opacity: 1;
+}
+
+
+
+.link::after{
+    visibility: hidden;
+    content: '';
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translate(-50%) scale(0.5);
+    z-index: 9999;
+    border-radius: 10px;
+    padding: 10px;
+    width: 8rem;
+    height: 6rem;
+    border: 1px solid white;
+    background: url(../dist/img/wa.png) no-repeat center center;
+    background-size: 50%;
+    object-fit: contain;
+    transition: transform 0.2s ease-in-out;
+}
 
 
 .link:hover::after {
-    content: '';
-    position: absolute;
-    top: 40%;
-    left: 30%;
-    padding: 10px;
-    
-    border: 1px solid white;
-    background: url(../dist/img/clients1.png) no-repeat center center;
+    background-color: rgb(117, 91, 201, 0.75);
+    visibility: visible;
+    background-size: cover;
+    transform: translate(-50%) scale(1);
 }
+
 
 
 
@@ -108,7 +134,7 @@ body::before {
 
 
 .gallery-item {
-   @apply h-[200px]  z-0 opacity-0 absolute transition-all duration-300 ease-in-out  w-[330px];
+   @apply h-[200px]  z-0 opacity-0 absolute transition-all duration-1000 ease-in-out  w-[330px];
 }
 
 .gallery-item-1 {

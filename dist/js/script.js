@@ -127,7 +127,7 @@ function sliderImage() {
 
       item.classList.remove(`gallery-item-${i + 1}`);
 
-      if (position < screen - 300) {
+      if (position < screen - 100) {
         item.classList.add(`gallery-item-${i + 1}`);
       }
     });
@@ -146,12 +146,57 @@ function sliderImage() {
     updateGallery();
   });
 
+}
 
 
+function projectDetails() {
+  const components = Array.from(document.getElementsByClassName('link'));
+  const detailsComponent = Array.from(document.querySelectorAll('.details'));
+  const buttonClosed = document.querySelectorAll('.closed');
+
+  components.forEach((component, i) => {
+    const images = detailsComponent[i].querySelectorAll('img');
+    const nextButton = detailsComponent[i].querySelector('#projectNextButton');
+    const prevButton = detailsComponent[i].querySelector('#projectPrevButton');
+    
+    let currentIndex = 0;
+
+    function updateSlider() {
+      images.forEach((image) => image.classList.add('hidden'));
+      images[currentIndex].classList.remove('hidden');
+    }
+
+    component.addEventListener('click', () => {
+      detailsComponent[i].classList.remove('hidden');
+      updateSlider(); 
+    });
+
+    buttonClosed[i].addEventListener('click', () => {
+      detailsComponent[i].classList.add('hidden');
+    });
+
+    if (nextButton) {
+      nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateSlider();
+      });
+    }
+
+    if (prevButton) {
+      prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateSlider();
+      });
+    }
+  });
 }
 
 
 
+
+
+
+projectDetails();
 scrollProject();
 loadUI();
 sliderImage();

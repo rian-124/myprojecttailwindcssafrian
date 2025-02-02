@@ -192,21 +192,31 @@
 
 
        <!-- Project section start -->
-       <section id="blog" class="pt-20">
+       <section id="blog" class="pt-20 relative">
             <div class="w-full">
                 <div class="bg-bgGradientpurple mb-16 shadow-left-right w-52  lg:w-96 h-16 rounded-r-full flex items-center justify-end pr-12">
                     <h1 class="text-white font-semibold md:text-xl lg:text-4xl">My Project</h1>
                 </div>
-                <div id="project-container" class="grid grid-cols-9 grid-rows-1  justify-end p-2 text-white">
+                <div id="project-container" class="grid grid-cols-9 grid-rows-1  p-2 text-white">
                     <!-- grid kanan start -->
-                    <div  class="col-span-9 grid grid-cols-subgrid">
-                        <div class="relative col-start-1 col-end-2 lg:col-start-5 lg:col-end-6 w-full justify-center flex">
+                    <div  class="col-span-9 grid grid-cols-subgrid ">
+                        <div class="relative col-start-1 col-end-2 lg:col-start-5 lg:col-end-6 w-full justify-center link  flex">
                             <div class="h-full bg-white w-1"></div>
-                            <a href="">
-                                <div class="bg-yellow-500 p-3 rounded-full absolute -translate-x-1/2 translate-y-1/2 top-16 border-4 border-white">
-                                    <img src="dist/img/icons8-projects-50.png" alt="">
-                                </div>
-                            </a>
+                                <div class="">
+                                    <div class="bg-yellow-500 p-3 rounded-full absolute -translate-x-1/2 translate-y-1/2 top-16 border-4 border-white">
+                                        <img src="dist/img/icons8-projects-50.png" alt="">
+                                    </div>
+                                </div>    
+                        </div>
+                        <div class="details hidden fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  z-50 border-4 rounded-md border-white w-[90%] h-[90%] bg-slate-300/50 p-10 ">
+                            <div class="flex items-center overflow-hidden  h-full justify-center">
+                                <img src="dist/img/Picture1.jpg" alt="" class="w-full h-full object-contain">
+                                <img src="dist/img/Picture2.jpg" alt="" class="w-full h-full object-contain">
+                                <img src="dist/img/Picture1.jpg" alt="" class="w-full h-full object-contain">
+                                <button id="projectNextButton" class="p-2 z-40 bg-bgGradientDark w-16 h-16 text-center text-white text-2xl absolute -translate-x-[50%] translate-y-[50%] left-20 rounded-full">&#9664;</button>
+                                <button id="projectPrevButton"class="p-2 z-40 bg-bgGradientDark w-16 h-16 text-center text-white text-2xl absolute -translate-x-[50%] translate-y-[50%] right-20 rounded-full">&#9654;</button>       
+                            </div>
+                            <button class="closed font-bold text-xl bg-red-600 rounded-full w-12 h-12 absolute -top-5 -right-5">X</button>
                         </div>
                         <div  class="content bg-bgGradientpurple border col-start-2 col-end-9 lg:col-start-6 lg:col-end-9 border-b-8 border-x-4 border-y-4 border-white rounded-md px-5 py-5 mt-5">
                                 <h1 class="text-2xl font-medium mb-5">Backend Developer</h1>
@@ -218,7 +228,7 @@
 
                     <!-- grid kiri start -->
                         <div  class="col-span-9 grid grid-cols-subgrid relative">
-                        <div class="absolute col-start-1 col-end-2 lg:col-start-5 lg:col-end-6 w-full justify-center  h-full  lg:items-center flex">
+                        <div class="absolute col-start-1 col-end-2 lg:col-start-5 lg:col-end-6 w-full justify-center  link h-full  lg:items-center flex">
                             <div class="h-full bg-white w-1"></div>
                             <a href="">
                                 <div class=" bg-yellow-500 p-3 rounded-full absolute -translate-x-1/2 translate-y-1/2 top-16 border-4 border-white">
@@ -226,6 +236,21 @@
                                 </div>
                             </a>
                         </div>
+                        <div class="details hidden fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  z-50 border-4 rounded-md border-white w-[90%] h-[90%] bg-slate-300/50 p-10">
+                            <div class="flex items-center overflow-hidden  h-full justify-center">
+                                <img src="dist/img/mobile1.jpg" alt="" class="w-full h-full object-contain">
+                                <img src="dist/img/mobile2.jpg" alt="" class="w-full h-full object-contain">
+                                <img src="dist/img/mobile3.jpg" alt="" class="w-full h-full object-contain">
+                                <img src="dist/img/mobile4.jpg" alt="" class="w-full h-full object-contain">
+                                <img src="dist/img/mobile5.jpg" alt="" class="w-full h-full object-contain">
+                                <img src="dist/img/mobile6.jpg" alt="" class="w-full h-full object-contain">
+                                
+                                <button id="projectNextButton" class="p-2 z-40 bg-bgGradientDark w-16 h-16 text-center text-white text-2xl absolute -translate-x-[50%] translate-y-[50%] left-20 rounded-full">&#9664;</button>
+                                <button id="projectPrevButton"class="p-2 z-40 bg-bgGradientDark w-16 h-16 text-center text-white text-2xl absolute -translate-x-[50%] translate-y-[50%] right-20 rounded-full">&#9654;</button>       
+                            </div>
+                            <button class="closed font-bold text-xl bg-red-600 rounded-full w-12 h-12 absolute -top-5 -right-5">X</button>
+                        </div>
+                        
                         <div class="content scale-50 bg-bgGradientpurple  border col-start-2 col-end-9 lg:col-start-2 lg:col-end-5 border-b-8 border-x-4 border-y-4 border-white rounded-md px-5 py-5 mt-5">
                                 <h1 class="text-2xl font-medium mb-5">Mobile Developer</h1>
                                 <h2 class="text-sm font-medium mb-5">DEVAN CELL</h2>
@@ -235,13 +260,22 @@
                     <!-- grid kiri end -->
                     <!-- grid kanan start -->
                     <div  class="col-span-9 grid grid-cols-subgrid">
-                        <div class="relative col-start-1 col-end-2 lg:col-start-5 lg:col-end-6 w-full justify-center flex">
+                        <div class="relative col-start-1 col-end-2 lg:col-start-5 lg:col-end-6 w-full justify-center flex link">
                             <div class="h-full bg-white w-1"></div>
                             <a href="">
-                                <div class="link bg-yellow-500 p-3 rounded-full absolute -translate-x-1/2 translate-y-1/2 top-16 border-4 border-white">
+                                <div class=" bg-yellow-500 p-3 rounded-full absolute -translate-x-1/2 translate-y-1/2 top-16 border-4 border-white">
                                     <img src="dist/img/icons8-projects-50.png" alt="">
                                 </div>
                             </a>
+                        </div>
+                        <div class="details hidden fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  z-50 border-4 rounded-md border-white w-[90%] h-[90%] bg-slate-300/50 p-10 ">
+                            <div class="flex items-center overflow-hidden  h-full justify-center">
+                                <img src="dist/img/porto1.png" alt="" class="w-full h-full object-contain">
+                               
+                                <button id="projectNextButton" class="p-2 z-40 bg-bgGradientDark w-16 h-16 text-center text-white text-2xl absolute -translate-x-[50%] translate-y-[50%] left-20 rounded-full">&#9664;</button>
+                                <button id="projectPrevButton"class="p-2 z-40 bg-bgGradientDark w-16 h-16 text-center text-white text-2xl absolute -translate-x-[50%] translate-y-[50%] right-20 rounded-full">&#9654;</button>       
+                            </div>
+                            <button class="closed font-bold text-xl bg-red-600 rounded-full w-12 h-12 absolute -top-5 -right-5">X</button>
                         </div>
                         <div class="content bg-bgGradientpurple border col-start-2 col-end-9 lg:col-start-6 lg:col-end-9 border-b-8 border-x-4 border-y-4 border-white rounded-md px-5 py-5 mt-5">
                                 <h1 class="text-2xl font-medium mb-5">Front-end DEVELOPER</h1>
