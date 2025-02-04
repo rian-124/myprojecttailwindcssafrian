@@ -11,6 +11,8 @@ function introduceLoadUi() {
 
   const screenWidth = window.innerWidth;
 
+
+
   function delay(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
@@ -36,6 +38,7 @@ function introduceLoadUi() {
 
     toggleClass(elements.profil_image, "tranform-profil");
   }
+
 
   elements.button.addEventListener("click", async () => {
     animateElements();
