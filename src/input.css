@@ -44,6 +44,24 @@ body::before {
     }
 }
 
+@keyframes cursor {
+    50% {border-color: transparent;}
+}
+
+@keyframes text {
+    from {width: 0;}
+    to {width: 100%;}
+}
+
+
+
+
+.typing {
+    @apply inline-block overflow-hidden  rounded-md;
+    animation: text 4s steps(20) , cursor .6s step-end infinite alternate;
+
+}
+
 #profil img {
   @apply lg:w-[400px]
 }
@@ -73,7 +91,7 @@ body::before {
     width: 8rem;
     height: 6rem;
     border: 1px solid white;
-    background: url(../dist/img/wa.png) no-repeat center center;
+    background: var(--bg-url) no-repeat center center;
     background-size: 50%;
     object-fit: contain;
     transition: transform 0.2s ease-in-out;
@@ -222,7 +240,7 @@ body::before {
 }
 
 .profil-image {
-    @apply translate-x-[450px]
+    @apply translate-x-[500px]
 }
 
 .tranform-profil{
@@ -250,6 +268,11 @@ body::before {
 } */
 
 @layer components {
+
+    ::-webkit-scrollbar-track {
+        background: #1e293b;
+        border-radius: 10px;
+      }
 
 .humberger-line {
     @apply w-[30px] h-[2px] my-2 block bg-dark
